@@ -1,5 +1,7 @@
 import React from 'react';
 
+// A single card of a friend with profile picture, name and email.
+
 const Card = ({id, name, email}) => {
   return (
     <div className='tc w-20 br2 grow dib pa3 ma2 bw2 shadow-5 bg-white'>

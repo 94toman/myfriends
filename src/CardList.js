@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
+// Creates a list of friends from "friends" list passed from the App.js component
 
 const CardList = ({ friends }) => {
   return (
