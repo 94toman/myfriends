@@ -1,12 +1,12 @@
 import React from 'react';
 import Card from './Card';
-import { friends } from './friends';
 
-const CardList = () => {
+
+const CardList = ({ friends }) => {
   return (
     <div>
         {
-            friends.map((user, i) => {
+            friends.map((friend,i) => {
                 return (
                     <Card 
                         key={[i]}
