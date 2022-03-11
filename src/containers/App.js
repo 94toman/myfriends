@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/Searchbox';
+import Sticky from '../components/Sticky'
 import 'tachyons';
 
 
@@ -24,7 +25,7 @@ class App extends Component {            // It is a Smart component (it has a st
   }
 
   render() {
-    const { friendList, searchfieldContent} = this.state;
+    const { friendsList, searchfieldContent} = this.state;
     const filteredFriends = friendsList.filter(friend => {             // A function that creates a new list of friends containing the Searchbox content
       return friend.name.toLowerCase().includes(searchfieldContent.toLowerCase())
     })
@@ -33,8 +34,10 @@ class App extends Component {            // It is a Smart component (it has a st
     } else 
       return (               // Whole website content is rendered here
       <div className='tc'>
-        <h1>MyFriends</h1>
-        <SearchBox searchChange={this.onSearchChange}/>
+        <Sticky>
+          <h1>MyFriends</h1>
+          <SearchBox searchChange={this.onSearchChange}/>
+        </Sticky>
         <CardList friends={filteredFriends}/>
       </div>
     );

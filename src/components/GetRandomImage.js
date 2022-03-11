@@ -26,5 +26,4 @@ const GetRandomImage = () => {
         <img src={randomUrl.url} alt="friend" />  
     )
 }
-
 export default GetRandomImage;

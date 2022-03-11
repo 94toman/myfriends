@@ -13,7 +13,7 @@ const CardList = ({ friends }) => {
                         key={[i]}
                         id={friends[i].id} 
                         name={friends[i].name} 
-                        email={friends[i].email}
+                        email={friends[i].email}                        
                     />  
                 )
             })
@@ -23,3 +23,6 @@ const CardList = ({ friends }) => {
 }
 
 export default CardList;
+
+
+
