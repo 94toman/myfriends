@@ -12,3 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Kelly Slab';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Kelly Slab'), url('KellySlab-Regular.ttf') format('woff');
+  }
+
+h1{
+  font-family: 'Kelly Slab';
+}

@@ -30,12 +30,12 @@ class App extends Component {            // It is a Smart component (it has a st
       return friend.name.toLowerCase().includes(searchfieldContent.toLowerCase())
     })
     if (!friendsList.length) {
-      return <h1 className='tc'>LOADING</h1>
+      return <h1 className='tc f1'>Loading</h1>
     } else 
       return (               // Whole website content is rendered here
       <div className='tc'>
         <Sticky>
-          <h1>MyFriends</h1>
+          <h1 className='f1'>MyFriends</h1>
           <SearchBox searchChange={this.onSearchChange}/>
         </Sticky>
         <CardList friends={filteredFriends}/>
