@@ -5,6 +5,7 @@ import Sticky from '../components/Sticky'
 import 'tachyons';
 
 
+
 class App extends Component {            // It is a Smart component (it has a state), therefore the class syntax
   constructor() {
     super()                              // This just has to be there
@@ -15,10 +16,33 @@ class App extends Component {            // It is a Smart component (it has a st
   }
 
   componentDidMount() {
+  
+    const getImgUrl = async function(){
+      try{
+        const imgUrl = await Promise.resolve(
+            fetch('https://100k-faces.glitch.me/random-image-url')
+            .then(resp => resp.json())
+            )
+            return imgUrl;
+      } catch (err) {
+        console.log('There wass an error in getting the image URL', err)
+      }
+    }
+
     fetch('https://gorest.co.in/public/v2/users')
     .then(response => response.json())
     .then(users => this.setState ({friendsList: users}))
-  }
+    .then(() => {
+      this.state.friendsList.map((friend, i) => {
+        getImgUrl()
+        .then(data => (friend.url = data.url))
+    })}   
+    )
+    .then(() => {
+
+      console.log(this.state.friendsList)
+    })
+  } 
 
   onSearchChange = (event) => {          // It is not part of React, therefore the Arrow function. This function is passed to SearchBox component, it is triggered when SearchBox is changed.
     this.setState({ searchfieldContent: event.target.value })        // This assigns the value of SearchBox into State of the App Component
@@ -45,3 +69,6 @@ class App extends Component {            // It is a Smart component (it has a st
 }
 
 export default App;
+
+
+

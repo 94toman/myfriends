@@ -10,10 +10,11 @@ const CardList = ({ friends }) => {
             friends.map((friend,i) => {
                 return (
                     <Card 
-                        key={[i]}
+                        key={i}
                         id={friends[i].id} 
                         name={friends[i].name} 
-                        email={friends[i].email}                        
+                        email={friends[i].email}   
+                        url={friends[i].url}   
                     />  
                 )
             })

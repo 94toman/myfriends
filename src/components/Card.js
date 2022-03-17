@@ -4,10 +4,11 @@ import React from 'react';
 
 // https://github.com/ozgrozer/100k-faces
 
-const Card = ({id, name, email}) => {
+const Card = ({id, name, email, url}) => {
   return (
     <div className='tc w-20 br2 grow dib pa3 ma2 bw2 shadow-5 bg-white'>
-      <img src={`https://ozgrozer.github.io/100k-faces/0/4/00${id}.jpg`} alt="friend" />  
+      <img id={`photo${id}${url}`} src={`https://ozgrozer.github.io/100k-faces/0/${Number(String(id)[0])}/00${id}.jpg`} alt='friend' />  
+      <p>{url}</p>
       <h2>{name}</h2>
       <p>{email}</p>
     </div>
