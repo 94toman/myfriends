@@ -1,5 +1,5 @@
 import React from 'react';
-import loading from './loading.gif';
+import './Card.css'
 
 // A single card of a friend with profile picture, name and email.
 
@@ -10,8 +10,8 @@ import loading from './loading.gif';
 const Card = ({id, name, email, url}) => {
 
   return (
-    <div className='tc w-20 br2 grow dib pa3 ma2 bw2 shadow-5 bg-white'>
-      <img src={url} alt='friend picture'/>
+    <div className='tc br2 grow dib pa3 ma2 bw2 shadow-5 bg-white'>
+      <img className='cardImg' src={url} alt='friend picture'/>
       <h2>{name}</h2>
       <p>{email}</p>
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/Searchbox';
-import Sticky from '../components/Sticky'
+import Sticky from '../components/Sticky';
 import 'tachyons';
 
 class App extends Component {            // It is a Smart component (it has a state), therefore the class syntax
@@ -55,7 +55,9 @@ class App extends Component {            // It is a Smart component (it has a st
         <Sticky>
           <h1 className='f1'>MyFriends</h1>
           <SearchBox searchChange={this.onSearchChange}/>
+          
         </Sticky>
+
         <CardList friends={filteredFriends}/>
       </div>
     );
