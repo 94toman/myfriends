@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from '../components/CardList';
-import SearchBox from '../components/Searchbox';
-import Sticky from '../components/Sticky';
+import CardList from './components/CardList';
+import SearchBox from './components/Searchbox';
+import Sticky from './components/Sticky';
 import 'tachyons';
 
 class App extends Component {            // It is a Smart component (it has a state), therefore the class syntax
@@ -23,13 +23,13 @@ class App extends Component {            // It is a Smart component (it has a st
             )
             return imgUrl;
       } catch (err) {
-        console.log('There wass an error in getting the image URL', err)
+        console.log('There was an error in getting the image URL', err)
       }
     }
-
   fetch('https://gorest.co.in/public/v2/users')
   .then(response => response.json())
   .then(array => {
+    this.setState ({friendsList: array})
     array.map((friend, i) => {
       getImgUrl()
       .then(data => (friend.url = data.url))
