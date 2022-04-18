@@ -14,27 +14,28 @@ class App extends Component {            // It is a Smart component (it has a st
   }
 
   componentDidMount() {
-  
-    const getImgUrl = async function(){
-      try{
-        const imgUrl = await Promise.resolve(
-            fetch('https://100k-faces.glitch.me/random-image-url')
-            .then(resp => resp.json())
-            )
-            return imgUrl;
-      } catch (err) {
-        console.log('There was an error in getting the image URL', err)
-      }
-    }
+    // Tried fetching random image URL, but it was really slow, so I used another way.
+    // const getImgUrl = async function(){
+    //   try{
+    //     const imgUrl = await Promise.resolve(
+    //         fetch('https://100k-faces.glitch.me/random-image-url')
+    //         .then(resp => resp.json())
+    //         )
+    //         return imgUrl;
+    //   } catch (err) {
+    //     console.log('There was an error in getting the image URL', err)
+    //   }
+    // }
   fetch('https://gorest.co.in/public/v2/users')
   .then(response => response.json())
   .then(array => {
     this.setState ({friendsList: array})
-    array.map((friend, i) => {
-      getImgUrl()
-      .then(data => (friend.url = data.url))
-      .then(() => this.setState ({friendsList: array}))
-    })
+    // // This was used to update each friend picture with random image URL
+    // array.map((friend, i) => {
+    //   getImgUrl()
+    //   .then(data => (friend.url = data.url))
+    //   .then(() => this.setState ({friendsList: array}))
+    // })
   })
 } 
 
